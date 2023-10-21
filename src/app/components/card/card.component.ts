@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -13,12 +13,20 @@ export class CardComponent implements OnInit {
 	gameLabel:string=""
 	@Input()
 	gameType:string ="XPTO | PS4"
+	@Output() outputGeneration = new EventEmitter<string>()
 	@Input()
 	gamePrice:string = "R$ 399,90"
 
-  constructor() { }
+	passGeneration(){
+		this.outputGeneration.emit(this.gameType)
+	}
+
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
+	this.passGeneration()
   }
 
 }
