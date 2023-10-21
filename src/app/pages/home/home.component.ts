@@ -38,4 +38,10 @@ export class HomeComponent implements OnInit {
     this.filterStatusPs4 = false;
     this.filterStatusPs5 = true;
   }
+
+  showAll(){
+    this.filterStatusPs3 = true;
+    this.filterStatusPs4 = true;
+    this.filterStatusPs5 = true;
+  }
 }
